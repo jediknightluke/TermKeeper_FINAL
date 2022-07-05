@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermKeeper_FINAL.TermAdd">
+
+
+    <ContentPage.Content>
+        
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            
+            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
+            <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X"  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="Add Term" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            
+            
+            <StackLayout  Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry Placeholder="Term Name" x:Name="txtTermTitle"/>
+                <Label Text="Start Date" />
+                <DatePicker x:Name="startDatePicker" Format="D"></DatePicker>
+                <Label Text="End Date" />
+                <DatePicker x:Name="endDatePicker" Format="D"></DatePicker>
+
+            </StackLayout>
+
+            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                    <Button Text="Save" TextColor="White" Clicked="SaveButton_Clicked" BackgroundColor="Transparent"/>
+                </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

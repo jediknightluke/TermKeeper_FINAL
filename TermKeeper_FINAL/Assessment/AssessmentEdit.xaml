@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TermKeeper_FINAL.AssessmentEdit">
+             x:Class="TermKeeper_FINAL.AssessmentEdit"
+             Title="{Binding AssessmentName}">
     <ContentPage.Content>
         <Grid x:Name="MainNavBar" ColumnSpacing="4">
             <Grid.ColumnDefinitions>
@@ -16,6 +17,7 @@
             </Grid.RowDefinitions>
             <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
             <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="OnButtonClick"/>
+            <Button Padding="10" Grid.Row="0" Grid.Column="0" Text="Save" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="Button_Clicked"/>
             <Label Grid.Row="0" Grid.Column="1" Text="Edit Assessment" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
             <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
             <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,0,10,0">
