@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermKeeper_FINAL.CourseAdd">
+    <ContentPage.Content>
+        <Grid x:Name="MainNavBar" ColumnSpacing="2">
+            <Label Grid.Row="0" Grid.Column="1" Text="Add Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,0,10,0">
+                <TableSection>
+                    <EntryCell Label="Course Name" x:Name="CourseName"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Course Status" VerticalOptions="Center"/>
+                            <Picker x:Name="CourseStatus" Title="Select ">
+                                <Picker.Items>
+                                    <x:String>In-Progress</x:String>
+                                    <x:String>Completed</x:String>
+                                    <x:String>Dropped</x:String>
+                                    <x:String>To Take</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Start Date" VerticalOptions="Center"/>
+                            <DatePicker x:Name="startDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="End Date" VerticalOptions="Center"/>
+                            <DatePicker x:Name="endDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell Label="Instructor Name:" x:Name="InstructorName"/>
+                    <EntryCell Label="Instructor Phone:" x:Name="InstructorPhone"/>
+                    <EntryCell Label="Instructor Email:" x:Name="InstructorEmail"/>
+                    <SwitchCell Text="Enable Notifications" x:Name="EnableNotifications"/>
+                    <EntryCell Label="Notes:" x:Name="Notes"/>
+                </TableSection>
+
+            </TableView>
+            <Button Grid.Row="2" Grid.ColumnSpan="1" Text="Add Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Save_Course" BackgroundColor="Transparent"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
