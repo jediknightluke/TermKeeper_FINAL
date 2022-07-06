@@ -94,7 +94,7 @@ namespace TermKeeper_FINAL
             }
         }
 
-        private async void CancelClicked(object sender, EventArgs e)
+        private async void BackButtonClick(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
         }

@@ -3,21 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermKeeper_FINAL.CourseEdit">
     <ContentPage.Content>
-        <Grid x:Name="MainNavBar" ColumnSpacing="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
+
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0" VerticalOptions="FillAndExpand" Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
-            <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClicked"/>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="BackButtonClicked"/>
             <Label Grid.Row="0" Grid.Column="1" Text="Edit Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
             <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,0,10,0">
                 <TableSection>
                     <EntryCell Label="Course Name" x:Name="CourseName"/>
@@ -54,9 +56,16 @@
                 </TableSection>
 
             </TableView>
-            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
-            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="SAVE" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SaveCourseUpdate" BackgroundColor="Transparent"/>
-
+            <TableView Grid.Row="3" Grid.ColumnSpan="3">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">
+                            <Button  Grid.ColumnSpan="3" Text="SAVE" TextColor="White" Clicked="SaveCourseUpdate" BackgroundColor="Transparent"/>
+                            <Button  Grid.ColumnSpan="3" Text="CANCEL" TextColor="White" Clicked="BackButtonClicked" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermKeeper_FINAL.TermEdit">
     <ContentPage.Content>
-        <Grid x:Name="MainNavBar" ColumnSpacing="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
+
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0" VerticalOptions="FillAndExpand" Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
-            <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClicked"/>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="BackButtonClicked"/>
             <Label Grid.Row="0" Grid.Column="1" Text="Edit Term" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
             <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,30,10,0">
                 <TableSection>
@@ -34,8 +37,18 @@
                     </ViewCell>
                 </TableSection>
             </TableView>
-            <BoxView Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="DarkBlue"/>
-            <Button Grid.ColumnSpan="3" Grid.Row="2" Text="SAVE" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Transparent" Clicked="SubmitButtonClicked"/>
+
+
+
+            <TableView Grid.Row="3" Grid.ColumnSpan="3">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" Grid.ColumnSpan="3">
+                            <Button Grid.ColumnSpan="3" Text="SAVE" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Transparent" Clicked="SubmitButtonClicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -3,9 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermKeeper_FINAL.CourseAdd">
     <ContentPage.Content>
-        <Grid x:Name="MainNavBar" ColumnSpacing="2">
-            <Label Grid.Row="0" Grid.Column="1" Text="Add Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0" VerticalOptions="FillAndExpand" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
+            <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="courseName" Text="Add Course" TextColor="White" HorizontalOptions="Center"/>
+            </StackLayout>
             <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,0,10,0">
                 <TableSection>
                     <EntryCell Label="Course Name" x:Name="CourseName"/>
@@ -42,7 +57,18 @@
                 </TableSection>
 
             </TableView>
-            <Button Grid.Row="2" Grid.ColumnSpan="1" Text="Add Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Save_Course" BackgroundColor="Transparent"/>
+
+
+            <TableView Grid.Row="3" Grid.ColumnSpan="3">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" Grid.ColumnSpan="3">
+                            <Button Grid.Row="3" Text="Add Course" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Save_Course" BackgroundColor="Transparent"/>
+                            <Button Grid.Row="3" Text="Cancel" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BackButtonClick" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

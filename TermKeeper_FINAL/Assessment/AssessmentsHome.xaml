@@ -3,21 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermKeeper_FINAL.AssessmentsHome">
     <ContentPage.Content>
-        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0" VerticalOptions="FillAndExpand" Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
-
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
-            <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="OnButtonClick"/>
-            <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="OnButtonClick"/>
+            <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                 <Label x:Name="CourseName" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="Assessments" HorizontalOptions="Center" TextColor="White"/>
             </StackLayout>
@@ -34,8 +35,18 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
-            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="ADD ASSESSMENT" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Clicked="Add_Assessment_Click" BackgroundColor="Transparent"/>
+
+
+            <TableView Grid.Row="3" Grid.ColumnSpan="3">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="ADD ASSESSMENT" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Clicked="Add_Assessment_Click" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

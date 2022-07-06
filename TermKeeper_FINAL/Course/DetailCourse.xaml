@@ -16,8 +16,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
-                <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
-                <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X"  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
+            <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
                 <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                     <Label x:Name="courseName" TextColor="White" HorizontalOptions="Center"/>
                 </StackLayout>
@@ -73,6 +73,15 @@
                         </StackLayout>
                     </ViewCell>
 
+
+
+                </TableSection>
+
+            </TableView>
+
+
+            <TableView Grid.Row="3" Grid.ColumnSpan="3">
+                <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
                             <Button Text="EDIT COURSE" TextColor="White" Clicked="EditCourseClick" BackgroundColor="Transparent"/>
@@ -84,9 +93,7 @@
                             <Button Text="ASSESSMENTS" TextColor="White" Clicked="AssessmentsClick" BackgroundColor="Transparent"/>
                         </StackLayout>
                     </ViewCell>
-
                 </TableSection>
-
             </TableView>
 
         </Grid>
