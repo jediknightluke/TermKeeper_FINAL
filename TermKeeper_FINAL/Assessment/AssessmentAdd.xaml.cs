@@ -52,14 +52,14 @@ namespace TermKeeper_FINAL
             await Navigation.PopModalAsync();
         }
 
-        private async void Add_Assessment_Clicked(object sender, EventArgs e)
+        private async void AddAssessmentClicked(object sender, EventArgs e)
         {
-            // Assessment assessment = new Assessment();
             var assessment = new Models.Assessment();
             assessment.Title = AssessmentName.Text;
             assessment.StartDate = StartDate.Date;
             assessment.EndDate = EndDate.Date;
             assessment.Course = _course.Id;
+            assessment.NotificationEnabled = EnableNotifications.On == true ? 1 : 0;
             assessment.Type = (string)AssessmentType.SelectedItem;
 
             if (CheckForNull(AssessmentName.Text))

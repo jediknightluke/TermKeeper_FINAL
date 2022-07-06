@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermKeeper_FINAL.DetailCourse">
     <ContentPage.Content>
-        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
-            <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X"  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
-            <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
-                <Label x:Name="courseName" TextColor="White" HorizontalOptions="Center"/>
-            </StackLayout>
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0" VerticalOptions="FillAndExpand" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue"/>
+                <Button Padding="5" Grid.Row="0" Grid.Column="0" Text="X"  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
+                <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label x:Name="courseName" TextColor="White" HorizontalOptions="Center"/>
+                </StackLayout>
             <TableView Grid.Row="1" Grid.ColumnSpan="3">
                 <TableSection x:Name="CourseTable">
                     <ViewCell>
@@ -68,22 +69,28 @@
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                             <Label Text="Notes:" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                             <Label x:Name="Notes" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                            <Button Text="Share" x:Name="shareButton" HorizontalOptions="End" />
+                            <Button Text="Share" x:Name="shareButton" HorizontalOptions="End" Clicked="ShareButtonClicked"/>
                         </StackLayout>
                     </ViewCell>
 
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                            <Button Text="EDIT COURSE" TextColor="White" Clicked="EditCourseClick" BackgroundColor="Transparent"/>
+                            <Button Text="DROP COURSE" TextColor="White" Clicked="DropCourseClick" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                            <Button Text="ASSESSMENTS" TextColor="White" Clicked="AssessmentsClick" BackgroundColor="Transparent"/>
+                        </StackLayout>
+                    </ViewCell>
 
                 </TableSection>
+
             </TableView>
-            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
-            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
-                <Button Text="EDIT COURSE" TextColor="White" Clicked="EditCourseClick" BackgroundColor="Transparent"/>
-                <Button Text="DROP COURSE" TextColor="White" Clicked="DropCourseClick" BackgroundColor="Transparent"/>
-            </StackLayout>
-            <BoxView Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
-            <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center">
-                <Button Text="ASSESSMENTS" TextColor="White" Clicked="AssessmentsClick" BackgroundColor="Transparent"/>
-            </StackLayout>
+
         </Grid>
+        
     </ContentPage.Content>
+    
 </ContentPage>

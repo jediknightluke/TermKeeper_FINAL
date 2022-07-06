@@ -45,7 +45,7 @@
                 </TableSection>
             </TableView>
             <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="DarkBlue"/>
-            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="Save" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Add_Assessment_Clicked" BackgroundColor="Transparent"/>
+            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="Save" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="AddAssessmentClicked" BackgroundColor="Transparent"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

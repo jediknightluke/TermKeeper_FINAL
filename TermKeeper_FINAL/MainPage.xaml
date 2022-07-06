@@ -32,6 +32,14 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <Label FontFamily="RobotoBold" Grid.Row="2" Grid.ColumnSpan="3" FontSize="14"  VerticalOptions="Center" HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text=" LAP1-Mobile Application Development Using C# &#10; By Luke Melton &#10; Instructor: Lauren Provost"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
     </Grid>
 
 </ContentPage>

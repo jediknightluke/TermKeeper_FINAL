@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TermKeeper_FINAL.Interface;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -44,6 +45,14 @@ namespace TermKeeper_FINAL
 
         }
 
+        private async void ShareButtonClicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = Notes.Text,
+            });
+        }
+
         private async void BackButtonClick(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
@@ -56,7 +65,7 @@ namespace TermKeeper_FINAL
 
         private async void DropCourseClick(object sender, EventArgs e)
         {
-            var confirmation = await DisplayAlert("Alert", "Are you sure you want to drop this course?", "Yes", "No");
+            var confirmation = await DisplayAlert("Alert", "Drop this course?", "Yes", "No");
             if (confirmation)
             {
                 await _conn.DeleteAsync(_currentCourse);
