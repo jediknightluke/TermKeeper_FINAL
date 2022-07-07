@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d"
              x:Class="TermKeeper_FINAL.TermAdd">
 
 
@@ -29,11 +32,13 @@
             <StackLayout  Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                 <Entry Placeholder="Term Name" x:Name="txtTermTitle"/>
                 <Label Text="Start Date" />
-                <DatePicker x:Name="startDatePicker" Format="D"></DatePicker>
+                <DatePicker Visual="Material"  x:Name="startDatePicker" Format="D"></DatePicker>
                 <Label Text="End Date" />
                 <DatePicker x:Name="endDatePicker" Format="D"></DatePicker>
 
             </StackLayout>
+            
+           
 
             <TableView Grid.Row="3" Grid.ColumnSpan="3">
                 <TableSection>
@@ -44,6 +49,7 @@
                     </ViewCell>
                 </TableSection>
             </TableView>
+
 
         </Grid>
     </ContentPage.Content>
