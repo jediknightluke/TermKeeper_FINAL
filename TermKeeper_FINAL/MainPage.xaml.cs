@@ -63,12 +63,12 @@ namespace TermKeeper_FINAL
 
                 var dummyCourse = new Models.Course();
                 dummyCourse.CourseName = "Mobile Application";
-                dummyCourse.StartDate = new DateTime(2022, 09, 01);
-                dummyCourse.StartDate = new DateTime(2023, 02, 28);
+                dummyCourse.StartDate = new DateTime(2022, 06, 14);
+                dummyCourse.StartDate = new DateTime(2022, 08, 31);
                 dummyCourse.Status = "In-Progress";
-                dummyCourse.InstructorName = "Lauren Provost";
-                dummyCourse.InstructorPhone = "(385) 428-8921";
-                dummyCourse.InstructorEmail = "lauren.provost@wgu.edu";
+                dummyCourse.InstructorName = "Luke Melton";
+                dummyCourse.InstructorPhone = "(918) 206-5431";
+                dummyCourse.InstructorEmail = "lmelt16@wgu.edu";
                 dummyCourse.NotificationEnabled = 1;
                 dummyCourse.Notes = "Xamirin Forms, C#, Mobile Development";
                 dummyCourse.Term = dummyTerm.Id;
@@ -76,8 +76,8 @@ namespace TermKeeper_FINAL
 
                 var dummyObjectiveAssessment = new Models.Assessment();
                 dummyObjectiveAssessment.Title = "Example Assessment 1";
-                dummyObjectiveAssessment.StartDate = new DateTime(2022, 09, 01);
-                dummyObjectiveAssessment.EndDate = new DateTime(2023, 02, 28);
+                dummyObjectiveAssessment.StartDate = new DateTime(2022, 06, 14);
+                dummyObjectiveAssessment.EndDate = new DateTime(2022, 08, 31);
                 dummyObjectiveAssessment.Course = dummyCourse.Id;
                 dummyObjectiveAssessment.Type = "Objective";
                 dummyObjectiveAssessment.NotificationEnabled = 1;
@@ -85,16 +85,15 @@ namespace TermKeeper_FINAL
 
                 var dummyPerformanceAssessment = new Models.Assessment();
                 dummyPerformanceAssessment.Title = "Example Assessment 2";
-                dummyPerformanceAssessment.StartDate = new DateTime(2022, 09, 01);
-                dummyPerformanceAssessment.EndDate = new DateTime(2023, 02, 28);
+                dummyPerformanceAssessment.StartDate = new DateTime(2022, 06, 14);
+                dummyPerformanceAssessment.EndDate = new DateTime(2022, 08, 31);
                 dummyPerformanceAssessment.Course = dummyCourse.Id;
                 dummyPerformanceAssessment.Type = "Performance";
                 dummyPerformanceAssessment.NotificationEnabled = 1;
                 await _conn.InsertAsync(dummyPerformanceAssessment);
             }
 
-            //notification handling
-            if (pushNotification == true)
+            if (pushNotification)
             {
                 pushNotification = false;
                 int courseId = 0;

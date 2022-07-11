@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              mc:Ignorable="d"
-             x:Class="TermKeeper_FINAL.TermAdd">
+             x:Class="TermKeeper_FINAL.TermAdd"
+             BackgroundColor="DarkGray">
 
 
     <ContentPage.Content>
@@ -23,7 +24,7 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
             <Frame Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="DarkBlue" CornerRadius="10" />
-            <Button  Grid.Row="0" Grid.Column="0" Text="X" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
+            <Button  Grid.Row="0" Grid.Column="0" Text="X" TextColor="White" BackgroundColor="Transparent" Clicked="BackButtonClick"/>
             <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                 <Label Text="Add Term" TextColor="White" HorizontalOptions="Center"/>
             </StackLayout>
